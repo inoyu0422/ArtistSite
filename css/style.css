@@ -1,0 +1,462 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*****共通部分
+***********************************************/
+body {
+  font-family:  "Noto Sans JP", sans-serif !important;
+  /* background-image: url(../images/img-background.jpg); */
+  background-position: center center; /* 上下左右の中央配置 */
+  background-repeat: no-repeat; /* 繰り返し表示をしない */
+  background-attachment: fixed; /* 表示領域（コンテナ）の大きさが画像より大きいとき動かないように固定 */
+  background-size: cover; /* 表示領域（コンテナ）の大きさに基づいて調整 */
+  background-color: #696969; /* 背景画像が読み込む前（読み込まれないとき）に表示される色指定 */
+}
+
+/*****ヘッダー*****/
+.header_top {
+  padding: 20px 0 0;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+.header_top h1 {
+
+}
+
+
+/*****メインビジュアル*****/
+.main_visual {
+  width: 100%;
+  background-color: rgba(0,0,0,0.8); /* 透かし */
+}
+.main_visual_img {
+  width: 100%;
+  margin: 0 auto 30px; /* 上　左右　下 */
+}
+.main_visual_img img {
+  width: 100%; /* ↑入れ物に合わせて１００％表示 */
+  vertical-align: top; /* 画像の下の余白消すやつ */
+  max-width: 100%;
+    background-position: 50% 50%;
+    line-height: 0;
+}
+
+/*****ナビゲーション*****/
+.main_nav {
+  width: 100%;
+  background-color: rgba(0,0,0,0.8); /* 透け色 */
+}
+.main_nav ul {
+  width: 1040px; /* 同じ数字でそろえるのが大事 */
+  margin: 0 auto;
+  list-style: none; /* 中黒消す */
+  display: flex;
+  justify-content: space-around; /* 横並び */
+}
+.main_nav ul li {
+  width: 25%;
+  text-align: center; /* 25%で分けた真ん中 */
+}
+.main_nav ul li a {
+  padding: 10px 0; /*上下１０左右０ */
+  display: block; /* 選択範囲を広げる押しやすさ 均等 */
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none; /* アンダーライン消す */
+  letter-spacing: 5px; /* 文字と文字の間の設定 */
+  transition: all 0.2s; /* 変化に関して すべて 0.2s マウス外した時 */
+  border-radius: 10px;
+}
+.main_nav ul li a:hover { /* hoverマウスオーバーの時 */
+  background-color: rgba(70,130,180,1); /* 上(nav_main)と合わせる */
+  transition: all 0.4s;
+}
+
+/*****フッター*****/
+.footer_top { /* nav_mainと合わせる */
+  display: table; /* 子要素にtable-cellがあるから */
+  width: 100%;
+  background-color: rgba(255,255,255,0.8);
+  text-align: center; /* (癖ある真ん中ならないときあり)ロゴ真ん中 */
+}
+.footer_top .copyright {
+  display: table-cell; /* 縦並び(親要素にtable入れる) */
+  vertical-align: middle; /* 縦並びの調整　*/
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.2rem; /* 1 root(16px←1文字分) em=16px*0.2=3.2 P←0.2em→I */
+}
+.footer_top .copyright img { /* クラス名でも親子関係 */
+  width: 150px;
+  height: auto;
+  padding: 40px 0; /* 上の隙間 */
+}
+
+/*****メインコンテンツ・トップページ
+***********************************************/
+.article_top {
+  width: 1040px; /* ヘッダートップなどと合わせる */
+  margin: 30px auto 0; /* main_visual_imgの逆で作って上の間の隙間を開ける */
+
+  flex-wrap: wrap; /* 領域満たしたら次の行送る */
+  justify-content: space-between; /* 間に挟む */
+}
+.section_top {/* 半分ずつ少し開けてあまりを空白 */
+  align-self: flex-start; /* コンテンツが上詰め　内容が終わった段階で子要素赤の背景終わり */
+  width: 100%;
+  background-color:
+  rgba(0,0,0,0.8);
+  margin-bottom: 30px; /* 他のコンテンツごとの隙間開ける　セクションごとの区切り */
+  padding: 2.5%; /* 2.5%内側に侵食 */
+  border-radius: 25px; /* 角が丸くなる　半径５ｐｘ */
+}
+.section_top h2 {
+  font-size: 24px;
+  color: #fff;
+  letter-spacing: 0.1rem; /* 文字と文字の空間 */
+  border-bottom: 1px solid #bababa; /* 見出しの協調 */
+  margin-bottom: 20px; /* 下だけ　強調指定 */
+}
+.section_top img {
+  width: 100%;/* １０４０ｐの48.5% */
+  margin-bottom: 10px; /* 画像と文字の隙間を開けて見やすく */
+}
+.section_top iframe {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.section_top p {
+  font-size: 16px; /* 任意で設定 */
+  color: #fff;
+  margin-bottom: 20px; /* btnのための隙間 */
+
+}
+.section_top .btn06  {/* クラス名子要素 */
+  font-size: 16px;
+  font-weight: bold;
+  color: #000; /* 文字の色背景と少しずらす */
+  background-color: #fff;/* 赤くした文字の後ろを白に */
+  padding: 10px 30px; /* pタグからかぶってるところを開ける */
+  text-decoration: none;
+  border-radius: 25px; /* 角が丸くなる　半径５ｐｘ */
+  transition: all 0.2s; /* 上(ナビゲーション)と合わせる */
+  display: inline-block;
+  padding: 10px 30px 10px 30px;
+  text-align: center;
+  outline: none;
+}
+.section_top .btn06:hover {/* マウスオーバーの時 */
+  color: #fff; /* ↑反転 */
+  background-color: #4682b4;/* 反転 */
+  transition: all 0.4s;
+}
+.section_top .btn06 a {
+
+}
+
+
+
+
+/* 矢印が右に移動 */
+
+.btnarrow1::after{
+    content: '';
+    /*絶対配置で矢印の位置を決める*/
+  position: absolute;
+    top:42%;
+    right: 13px;
+    /*矢印の形状*/
+    width: 5px;
+    height: 5px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    /*アニメーションの指定*/
+    transition: all .3s;
+}
+
+/*hoverした際の移動*/
+.btnarrow1:hover::after{
+    right: 11px;
+}
+/*****メインコンテンツ・ディスコグラフィー
+***********************************************/
+.article_disco {/* アーティクルトップ参照 */
+  width: 1040px; /* width margin トップと合わせる */
+  margin: 30px auto 0;
+}
+.section_disco {/* セクショントップ参照 */
+  background-color:
+  rgba(229,1,18,0.8); /* ↑合わせる */
+  margin-bottom: 30px; /* 合わせる　セクションごとの区切り */
+  padding: 2.5%; /* ↑合わせる */
+}
+.section_disco h2 {
+  font-size: 24px;
+  color: #fff;
+  letter-spacing: 0.1rem;
+}
+.section_disco h3 {
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 0.1rem;
+  border-bottom: 1px solid #bababa;/* セクショントップでかいたやつ */
+  margin-bottom: 20px;
+}
+.box_disco {
+  display: flex;
+}
+.box_disco .box_left,.box_disco .box_right {
+  width: 50%;
+}
+.box_disco .box_left img {
+  width: 90%;
+
+  max-width: 100%;
+
+  margin-bottom: 10px;
+}
+.box_disco .box_left p{
+  font-size: 14px;
+  color:#ccc;
+  line-height: 1.6;
+}
+.box_disco .box_right ul {
+  list-style: none;/* なかぐろけす */
+}
+.box_disco .box_right ul li {/* pを変えていく */
+  font-size: 16px;
+  font-weight: bold;
+  color:#fff;
+  line-height: 1.75;
+}
+
+
+/* NWESセクション */
+ol, ul {
+    list-style: none;
+}
+.topic_list .image {
+    float: left;
+    width: 180px;
+    vertical-align: bottom;
+    max-width: 100%;
+}
+.topic_list .description {
+    padding-left: 200px;
+}
+.topic_list .date {
+    font-size: 12px;
+    color: #999999;
+}
+.icon.new {
+    background-image: url(../images/new.png);
+    background-size: contain;
+    width: 33px;
+    height: 18px;
+}
+.icon {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom;
+}
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.topic_list .title {
+    font-size: 14px;
+    padding-top: 5px;
+}
+.topic_list .title a {
+    display: block;
+}
+.topic_list .headline {
+    font-size: 12px;
+    padding-top: 22px;
+}
+.color-mid {
+    color: #aaaaaa !important;
+}
+.topic_list .read_more {
+    font-size: 10px;
+}
+.color-accent {
+    color: #9774af !important;
+}
+a.ul {
+    text-decoration: underline;
+}
+.color-accent {
+    color: #9774af !important;
+}
+a {
+    -webkit-transition: all ease-out 240ms;
+    transition: all ease-out 240ms;
+    color: #ebebeb;
+    text-decoration: none;
+}
+
+.topic_list li {
+    *zoom: 1;
+    padding: 36px 0;
+    background: url(../images/border_left.png) no-repeat bottom center;
+}
+/* ビデオセクション */
+.list--contents {
+    display: flex;
+}
+.item__movie {
+  width: 1040px; /* 同じ数字でそろえるのが大事 */
+  margin: 0 auto;
+  padding: 10px;
+  text-align: -webkit-match-parent;
+}
+
+.topic_list .description:first-child {
+    padding-left: 0;
+}
+
+
+a {
+    text-decoration: none;
+
+}
+
+
+/* aboutセクション */
+
+.main_col img {
+    max-width: 100%;
+}
+#about {
+    padding-right: 30px;
+}
+#about .portrait {
+    padding-top: 25px;
+}
+#about .name {
+    padding-top: 27px;
+}
+#about .intro {
+    font-size: 12px;
+    padding: 30px 0;
+    background: url(../images/common/border_left.png) no-repeat bottom center;
+}
+#about .member_list {
+    padding: 27px 0 27px;
+    line-height: 1.2;
+}
+#about .member_list img {
+    vertical-align: middle;
+}
+#about img {
+
+    padding-right: 30px;
+}
+ol, ul {
+    list-style: none;
+}
+.main_col img {
+    max-width: 100%;
+}
+.article_second {
+  width: 1040px; /* ヘッダートップなどと合わせる */
+  margin: 30px auto 0; /* main_visual_imgの逆で作って上の間の隙間を開ける */
+
+  flex-wrap: wrap; /* 領域満たしたら次の行送る */
+  justify-content: space-between; /* 間に挟む */
+}
+.section_second {/* 半分ずつ少し開けてあまりを空白 */
+  align-self: flex-start; /* コンテンツが上詰め　内容が終わった段階で子要素赤の背景終わり */
+  width: 100%;
+  background-color:
+  rgba(0,0,0,0.8);
+  margin-bottom: 30px; /* 他のコンテンツごとの隙間開ける　セクションごとの区切り */
+  padding: 2.5%; /* 2.5%内側に侵食 */
+  border-radius: 25px; /* 角が丸くなる　半径５ｐｘ */
+}
+.section_second h2 {
+  font-size: 24px;
+  color: #fff;
+  letter-spacing: 0.1rem; /* 文字と文字の空間 */
+  border-bottom: 1px solid #bababa; /* 見出しの協調 */
+  margin-bottom: 20px; /* 下だけ　強調指定 */
+}
+.section_second img {
+  /* １０４０ｐの48.5% */
+  margin-bottom: 10px; /* 画像と文字の隙間を開けて見やすく */
+}
+.section_second iframe {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.section_second p {
+  font-size: 16px; /* 任意で設定 */
+  color: #fff;
+  margin-bottom: 20px; /* btnのための隙間 */
+}
+.section_second .btn06 {/* クラス名子要素 */
+  margin: auto;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000; /* 文字の色背景と少しずらす */
+  background-color: #fff;/* 赤くした文字の後ろを白に */
+  padding: 10px 30px; /* pタグからかぶってるところを開ける */
+  text-decoration: none;
+  border-radius: 25px; /* 角が丸くなる　半径５ｐｘ */
+  transition: all 0.2s; /* 上(ナビゲーション)と合わせる */
+  display: inline-block;
+  padding: 10px 30px 10px 30px;
+  text-align: center;
+  outline: none;
+}
+.section_second .btn06:hover {/* マウスオーバーの時 */
+  color: #fff; /* ↑反転 */
+  background-color: #4682b4;/* 反転 */
+  transition: all 0.4s;
+}
+
+/* musicセクション */
+.item_detail {
+    padding: 27px 0 45px;
+    background: url(../images/common/border_left.png) no-repeat bottom center;
+}
+.item_detail .subtitle {
+    font-size: 16px;
+    color: #aaaaaa;
+    font-family: Arial, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
+}
+.item_detail .title {
+    font-size: 20px;
+}
+.item_detail .image {
+    padding-top: 15px;
+}
+.item_detail .image img {
+    max-width: 100%;
+}
+.item_detail .songs {
+    font-size: 12px;
+    color: #ebebeb;
+
+    width: 285px;
+}
+.item_detail .status > * {
+    margin-top: 12px;
+    width: 255px;
+}
